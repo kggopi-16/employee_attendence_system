@@ -8,8 +8,7 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(express.json());
+// --- 1. CORS MUST BE FIRST ---
 app.use(cors({
     origin: [
         "https://employee-attendence-system.vercel.app",
@@ -19,8 +18,15 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true
 }));
+
+// --- 2. FIX HELMET blocking cross-origin ---
 app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
+// --- 3. Body Parsers ---
 app.use(morgan('dev'));
+app.use(express.json());
+
 
 // Database Connection
 console.log('Attempting to connect to MongoDB at:', process.env.MONGODB_URI);
@@ -29,6 +35,7 @@ mongoose.connect(process.env.MONGODB_URI)
     .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
+// Note: These routes create URLs like /api/auth/login
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/attendance', require('./routes/attendance'));
 app.use('/api/dashboard', require('./routes/dashboard'));
