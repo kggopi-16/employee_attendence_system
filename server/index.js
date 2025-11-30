@@ -11,11 +11,8 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: [
-        'http://localhost:5173',
-        'https://employee-attendance-system.vercel.app',
-        process.env.CLIENT_URL // Keep this for flexibility
-    ].filter(Boolean), // Remove undefined/null values
+    origin: ["https://employee-attendance-system.vercel.app"], // No trailing slash!
+    methods: ["POST", "GET"],
     credentials: true
 }));
 app.use(helmet());
