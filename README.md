@@ -57,19 +57,6 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 Create a `.env` file in the `server` directory with the following variables:
 
 ```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/employee-attendance
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-```
-
-## Screenshots
-
-### Home Page
-![Home Page](screenshots/home_page.png)
-
-### Employee Dashboard
-![Employee Dashboard](screenshots/employee_dashboard.png)
 
 ### Employee Profile
 ![Employee Profile](screenshots/profile_page.png)
