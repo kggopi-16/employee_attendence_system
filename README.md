@@ -2,6 +2,11 @@
 
 A full-stack Employee Attendance System built with the MERN stack (MongoDB, Express, React, Node.js).
 
+#by
+Govindhasamy K
+Indra Ganesan College of Engineering , Tiruchirappalli 
+contact No : 8681058703
+
 ## Features
 
 ### Employee
