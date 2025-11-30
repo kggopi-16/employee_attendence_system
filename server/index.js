@@ -11,7 +11,11 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: [
+        'http://localhost:5173',
+        'https://employee-attendance-system.vercel.app',
+        process.env.CLIENT_URL // Keep this for flexibility
+    ].filter(Boolean), // Remove undefined/null values
     credentials: true
 }));
 app.use(helmet());

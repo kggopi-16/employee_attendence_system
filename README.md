@@ -13,36 +13,8 @@ A full-stack Employee Attendance System built with the MERN stack (MongoDB, Expr
 - **Late Arrival Logic**: Automatically marks status as "Late" if checked in after 9:00 AM.
 
 ### Manager
-- **Dashboard**: View team stats (Present, Absent, Late).
-- **All Employees**: View attendance records of all employees.
-- **Reports**: Export attendance reports to CSV.
-
-## Tech Stack
-- **Frontend**: React, Vite, TailwindCSS, Zustand, Lucide React.
-- **Backend**: Node.js, Express, MongoDB, Mongoose, JWT.
-
-## Setup Instructions
-
-### Prerequisites
-- Node.js installed.
-- MongoDB installed and running locally (or update `.env` with cloud URI).
 
 ### 1. Clone the repository
-```bash
-git clone <repository-url>
-cd tap
-```
-
-### 2. Backend Setup
-```bash
-cd server
-npm install
-# Create .env file (see Environment Variables below)
-npm run seed # Optional: Seed sample data (Manager: manager@example.com / password123)
-npm run dev
-```
-
-### 3. Frontend Setup
 ```bash
 cd client
 npm install
